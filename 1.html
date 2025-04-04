@@ -1,45 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약 페이지</title>
-    <style>
-        /* 여기에 CSS 스타일을 추가하세요 */
-    </style>
+  <meta charset="UTF-8">
+  <title>상담 보고서 양식</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 100%;
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>예약 페이지</h1>
-    </header>
-    <main>
-        <form action="submit_reservation.php" method="POST">
-            <label for="name">이름:</label>
-            <input type="text" id="name" name="name" required><br><br>
 
-            <label for="email">이메일:</label>
-            <input type="email" id="email" name="email" required><br><br>
+  <h2>📋 상담 보고서</h2>
 
-            <label for="phone">전화번호:</label>
-            <input type="tel" id="phone" name="phone" required><br><br>
+  <form>
+    <div>
+      <label for="id">고유번호:</label>
+      <input type="text" id="id" name="id" required>
+    </div>
 
-            <label for="date">날짜:</label>
-            <input type="date" id="date" name="date" required><br><br>
+    <div>
+      <label for="name">성명:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
 
-            <label for="time">시간:</label>
-            <input type="time" id="time" name="time" required><br><br>
+    <div>
+      <label for="target">상담대상:</label>
+      <input type="text" id="target" name="target">
+    </div>
 
-            <label for="guests">인원 수:</label>
-            <input type="number" id="guests" name="guests" required><br><br>
+    <div>
+      <label for="type">상담형태:</label>
+      <select id="type" name="type" required>
+        <option value="">선택하세요</option>
+        <option value="상담">상담</option>
+        <option value="TM">TM</option>
+        <option value="거부">거부</option>
+        <option value="부재중">부재 중</option>
+      </select>
+    </div>
 
-            <label for="comments">특별 요청:</label><br>
-            <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+    <div>
+      <label for="content">상담내용:</label>
+      <textarea id="content" name="content" placeholder="상담 내용을 입력하세요..."></textarea>
+    </div>
 
-            <input type="submit" value="예약하기">
-        </form>
-    </main>
-    <footer>
-        <!-- 여기에 추가 정보 또는 링크를 넣으세요 -->
-    </footer>
+    <button type="submit">제출</button>
+  </form>
+
 </body>
 </html>
